@@ -1,0 +1,40 @@
+<!--miniprogram/pages/register/register.wxml-->
+<view class="page">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <view class="page__bd page__bd_spacing" wx:if="{{!isShowTime}}">
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <mp-form-page title="录入乘车人信息">
+      <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+        <mp-cells title="乘车人">
+          <mp-checkbox-group prop="riders" multi="{{false}}" bindchange="riderChange">
+            <mp-checkbox wx:for="{{riders}}" wx:key="_id" label=" {{index + 1}}. {{item.personInfo.name}}" value="{{item._id}}"></mp-checkbox>
+          </mp-checkbox-group>
+        </mp-cells>
+        <mp-cells title="体温">
+          <slider bindchange="temperatureChange" name="temperature" min="36" max="42" step="0.1" value="{{temperature}}" show-value></slider>
+        </mp-cells>
+        <mp-cells title="扫描乘车登记二维码">
+          <view class="scan__view">
+            <image class="weui-btn scan__image" mode="scaleToFill" src="/images/scanqr.png" bindtap="scanCode" role="img"></image>
+          </view>
+        </mp-cells>
+        <mp-cells title="您乘坐的车辆为" wx:if="{{formData.license}}">
+          <view class="scan__view">
+           <text class="highlight">冀J{{formData.license}}</text>
+          </view>
+        </mp-cells>
+      </mp-form>
+      <view slot="button">
+        <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+      </view>
+    </mp-form-page>
+  </view>
+  <view class="page__bd page__bd_spacing" wx:if="{{isShowTime}}">
+    <showTakeBusRecord rider="{{rider}}" isFever="{{isFever}}">
+    </showTakeBusRecord>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="closeAndReset">继续记录乘车人</button>
+    </view>
+  </view>
+
+</view>

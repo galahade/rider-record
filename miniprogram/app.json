@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/takeBusRecord/takeBusRecord",
+    "pages/chooseLib/chooseLib"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "黄骅公交疫情登记系统",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "mp-toptips": "../miniprogram_npm/weui-miniprogram/toptips/toptips",
+    "mp-cells": "../miniprogram_npm/weui-miniprogram/cells/cells",
+    "mp-cell": "../miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-checkbox": "../miniprogram_npm/weui-miniprogram/checkbox/checkbox",
+    "mp-checkbox-group": "../miniprogram_npm/weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-form-page": "../miniprogram_npm/weui-miniprogram/form-page/form-page",
+    "mp-msg": "../miniprogram_npm/weui-miniprogram/msg/msg",
+    "mp-form": "./components/form/form"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx5a3a7366fd07e119"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

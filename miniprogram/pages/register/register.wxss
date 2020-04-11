@@ -1,0 +1,4 @@
+/* miniprogram/pages/register/register.wxss */
+.highlight {
+  font-size: 35px;
+}

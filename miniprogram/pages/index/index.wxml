@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">黄骅公交疫情登记系统</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.name}}</view>
+                    </view>
+                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                                <navigator url="../{{page.name}}/{{page.name}}" class="weui-cell weui-cell_access">
+                                    <view class="weui-cell__bd">{{page.title}}</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </navigator>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="page__ft" bindlongpress="showHidenFunction">
+        <image src="/images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+    </view>
+</view>
+<!--
+<mp-navigation-bar show="{{show}}" animated="{{animated}}" color="{{color}}" background="{{background}}" title="导航页" back="{{true}}"></mp-navigation-bar>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Navigation</view>
+        <view class="page__desc">小程序自定义导航栏</view>
+    </view>
+    <view class="page__bd page__bd_spacing weui-tab">
+      <navigator url="../register/register" open-type="navigate" class="weui-btn">
+        <text>登记乘车人信息</text>
+      </navigator>
+      <navigator url="../takeBusRecord/takeBusRecord" open-type="navigate" class="weui-btn">
+        <text>乘车登记体温</text>
+      </navigator>
+                  <view class="weui-tab__panel">
+                <view class="weui-tab__content" >选项一的内容</view>
+                <view class="weui-tab__content" >选项二的内容</view>
+                <view class="weui-tab__content" >选项三的内容</view>
+            </view>
+        <button class="weui-btn" type="primary" bindtap="toggleLoading">触发loading</button>
+        <button class="weui-btn" type="primary" bindtap="changeColor">修改文字颜色</button>
+        <button class="weui-btn" type="primary" bindtap="changeBgColor">修改背景颜色</button>
+        <button class="weui-btn" type="primary" bindtap="toggleShow">显示 / 隐藏</button>
+        <button class="weui-btn" type="primary" bindtap="toggleAnimated">设置显示 / 隐藏opacity动画</button>
+    </view>
+</view>
+-->

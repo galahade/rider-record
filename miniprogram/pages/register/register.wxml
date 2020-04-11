@@ -1,0 +1,77 @@
+<!--miniprogram/pages/register/register.wxml-->
+<view class="page" wx:if="{{!isSuccess}}">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <mp-form-page title="录入乘车人信息">
+    <view class="weui-cells weui-cells_after-title" wx:if="{{riders.length}}">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">未成年人</view>
+        <view class="weui-cell__ft">
+          <switch checked="{{!isAdult}}" bindchange="isAdultChange" />
+        </view>
+      </view>
+    </view>
+    <mp-form id="form" rules="{{rulesC}}" models="{{formCData}}" wx:if="{{!isAdult}}">
+      <mp-cells>
+        <mp-cell show-error prop="name" title="姓名" ext-class="">
+          <input bindinput="inputCChange" data-field="name" class="weui-input" placeholder="请输入姓名" />
+        </mp-cell>
+      </mp-cells>
+      <mp-cells title="性别">
+        <mp-checkbox-group prop="gender" multi="{{false}}" bindchange="genderChange">
+          <mp-checkbox wx:for="{{genderItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+        </mp-checkbox-group>
+      </mp-cells>
+      <mp-cells title="监护人" wx:if="{{!isAdult}}">
+        <mp-checkbox-group prop="guardian" multi="{{false}}" bindchange="guardianChange">
+          <mp-checkbox wx:for="{{riders}}" wx:key="_id" label="{{item.personInfo.name}}" value="{{item._id}}"></mp-checkbox>
+        </mp-checkbox-group>
+      </mp-cells>
+    </mp-form>
+    <mp-form id="form" rules="{{rulesA}}" models="{{formAData}}" wx:if="{{isAdult}}">
+      <mp-cells>
+        <mp-cell show-error prop="name" title="姓名" ext-class="">
+          <input bindinput="inputAChange" data-field="name" class="weui-input" placeholder="请输入姓名" />
+        </mp-cell>
+        <mp-cell prop="idcard" title="身份证号" ext-class="">
+          <input bindinput="inputAChange" data-field="idcard" class="weui-input" placeholder="请输入身份证号" />
+        </mp-cell>
+        <view class="weui-cell weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view clas="weui-label">手机号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindinput="inputAChange" disabled="{{!isMobileEditable}}" type="number" data-field="mobile" class="weui-input" placeholder="请输入手机号" />
+          </view>
+          <view class="weui-cell__ft">
+            <button bindtap="toTCaptcha" disabled="{{!isMobileEditable}}" style="width: 100px">验证</button>
+          </view>
+        </view>
+        <mp-cell prop="vcode" title="验证码" ext-class=" ">
+          <input bindinput="inputAChange" type="number" data-field="vcode" class="weui-input" placeholder="手机验证码" />
+        </mp-cell>
+      </mp-cells>
+      <mp-cells title="性别">
+        <mp-checkbox-group prop="gender" multi="{{false}}" bindchange="genderChange">
+          <mp-checkbox wx:for="{{genderItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+        </mp-checkbox-group>
+      </mp-cells>
+    </mp-form>
+    <view slot="button">
+      <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+    </view>
+  </mp-form-page>
+</view>
+
+<view class="page" wx:if="{{isSuccess}}">
+  <mp-msg type="success" title="登记成功">
+    <view slot="desc"><text class="highlight">{{result}}</text>您好，</view>
+    <view slot="extend">
+    <view>感谢您对新冠肺炎防疫工作的支持。</view>
+    <view>乘车时，你可持本人登记信息测温乘车。</view>
+    <view>详情请咨询当值车长。</view>
+    </view>
+    <view slot="handle">
+      <button class="weui-btn" type="primary" bindtap="backToHome">返回导航页</button>
+    </view>
+  </mp-msg>
+</view>

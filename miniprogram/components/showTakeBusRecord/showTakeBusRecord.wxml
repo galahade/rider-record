@@ -1,0 +1,37 @@
+<!--components/showTakeBusRecord/showTakeBusRecord.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">登记成功</view>
+        <view class="title__time">{{titleTime}}</view>
+        <view class="title__time">车辆：冀J{{rider.license}}</view>
+        <view class="page__desc">感谢您对防治新冠肺炎工作的支持</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd frontItem">您的姓名</view>
+                <view class="endItem highlight">{{rider.name}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd frontItem">性别</view>
+                <view class="endItem">{{rider.gender}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd frontItem">体温</view>
+                <view class="endItem {{tempClass}}">{{rider.temperature}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd frontItem">检测时间</view>
+                <view class="endItem">{{contentTime}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd frontItem">{{phoneText}}</view>
+                <view class="endItem">{{rider.phone}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd frontItem">{{idcardText}}</view>
+                <view class="endItem">{{rider.idcard}}</view>
+            </view>
+        </view>
+    </view>
+</view>

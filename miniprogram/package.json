@@ -1,0 +1,18 @@
+{
+  "name": "rider_recorder",
+  "version": "1.0.0",
+  "description": "This project is used for record rider's person information and heat when take bus everytime.",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@miniprogram-component-plus/index-list": "^1.0.0",
+    "miniprogram-sm-crypto": "^0.1.0",
+    "moment": "^2.24.0",
+    "weui-miniprogram": "^0.2.1",
+    "weui-wxss": "^2.0.1"
+  }
+}
