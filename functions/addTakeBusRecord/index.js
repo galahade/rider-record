@@ -4,13 +4,13 @@ cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV,
   traceUser: true,
 })
-const wxContext = cloud.getWXContext()
-//获取默认环境数据库
-const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async(event, context) => {
-
+  
+  const wxContext = cloud.getWXContext()
+  //获取默认环境数据库
+  const db = cloud.database()
   //获取提交人信息
   const openid = wxContext.OPENID
   var rider = null
