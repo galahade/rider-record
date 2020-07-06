@@ -12,14 +12,14 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "mp-toptips": "../miniprogram_npm/weui-miniprogram/toptips/toptips",
-    "mp-cells": "../miniprogram_npm/weui-miniprogram/cells/cells",
-    "mp-cell": "../miniprogram_npm/weui-miniprogram/cell/cell",
-    "mp-checkbox": "../miniprogram_npm/weui-miniprogram/checkbox/checkbox",
-    "mp-checkbox-group": "../miniprogram_npm/weui-miniprogram/checkbox-group/checkbox-group",
-    "mp-form-page": "../miniprogram_npm/weui-miniprogram/form-page/form-page",
-    "mp-msg": "../miniprogram_npm/weui-miniprogram/msg/msg",
-    "mp-form": "./components/form/form"
+    "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips",
+    "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
+    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-checkbox": "/miniprogram_npm/weui-miniprogram/checkbox/checkbox",
+    "mp-checkbox-group": "/miniprogram_npm/weui-miniprogram/checkbox-group/checkbox-group",
+    "mp-form-page": "/miniprogram_npm/weui-miniprogram/form-page/form-page",
+    "mp-msg": "/miniprogram_npm/weui-miniprogram/msg/msg",
+    "mp-form": "/components/form/form"
   },
   "navigateToMiniProgramAppIdList": [
     "wx5a3a7366fd07e119"
