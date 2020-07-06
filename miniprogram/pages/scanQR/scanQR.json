@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+      "showTakeBusRecord": "../../components/showTakeBusRecord/showTakeBusRecord"
+  }
+}

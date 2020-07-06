@@ -1,0 +1,19 @@
+<!--miniprogram/pages/register/register.wxml-->
+<view class="page">
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+  <view class="page__bd page__bd_spacing">
+    <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+    <mp-form-page title="解码工具">
+      <mp-cells title="扫描二维码">
+        <view class="scan__view">
+          <image class="weui-btn scan__image" mode="scaleToFill" src="/images/scanqr.png" bindtap="scanCode" role="img"></image>
+        </view>
+      </mp-cells>
+      <mp-cells title="二维码的内容" wx:if="{{content}}">
+        <view class="scan__view">
+          <text class="highlight">{{content}}</text>
+        </view>
+      </mp-cells>
+    </mp-form-page>
+  </view>
+</view>

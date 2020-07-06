@@ -20,7 +20,7 @@ App({
         traceUser: true,
       })
       this.globalData = {}
-      this.checkRegister()
+     // this.checkRegister()
     }
     
   },

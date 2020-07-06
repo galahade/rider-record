@@ -19,6 +19,15 @@ Page({
           title: '登记体温',
           name: 'takeBusRecord'
         }]
+      },
+      {
+        id: 'util',
+        name: '工具',
+        open: true,
+        pages: [{
+          title: '扫码工具',
+          name: 'scanQR'
+        }]
       }
     ]
   },

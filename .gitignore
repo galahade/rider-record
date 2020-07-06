@@ -3,3 +3,4 @@
 **/node_modules/**
 miniprogram/miniprogram_npm/**
 package-lock.json
+package.json
